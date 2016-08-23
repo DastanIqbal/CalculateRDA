@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Calculate RDA</string>
+
+    //Font
+    <string name="robotoLight">font/Roboto-Light.ttf</string>
+    <string name="robotoMedium">font/Roboto-Medium.ttf</string>
+    <string name="robotoRegular">font/Roboto-Regular.ttf</string>
+    <string name="robotoThin">font/Roboto-Thin.ttf</string>
+    <string name="title_activity_mail_details">MailDetails</string>
+
+    <string-array name="activity_level">
+        <item>Little or no excerise</item>
+        <item>Light exercise (1&#8211;3 times/week)</item>
+        <item>Moderate exercise (3&#8211;5 days/week)</item>
+        <item>Heavy exercise (6&#8211;7 days/week)</item>
+        <item>Very Heavy exercise (physical job or excersie twice a day)</item>
+    </string-array>
+</resources>

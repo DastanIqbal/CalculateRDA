@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="vertical"
+    android:background="@color/bg_color">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.dastanapps.calculaterda.MainActivity">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_info"
+            style="@style/DCardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_age"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen8"
+                        android:layout_weight="0.3">
+
+                        <EditText
+                            android:id="@+id/edt_age"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Age"
+                            android:inputType="numberDecimal" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <RadioGroup
+                        android:id="@+id/rg_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen16"
+                        android:layout_marginTop="@dimen/dimen16"
+                        android:layout_weight="0.7"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_female"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorAccent"
+                            android:checked="true"
+                            android:text="Female" />
+
+                        <RadioButton
+                            android:id="@+id/rb_male"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Male" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen8"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edt_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Weight in kg"
+                            android:inputType="numberDecimal" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_height"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen8"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:id="@+id/edt_height"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Height in cms"
+                            android:inputType="numberDecimal" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen8"
+                    android:layout_marginRight="@dimen/dimen8"
+                    android:layout_marginTop="@dimen/dimen16"
+                    android:text="Select your activity level"
+                    android:textSize="@dimen/body" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen8"
+                    android:entries="@array/activity_level"
+                    android:spinnerMode="dialog" />
+
+                <Button
+                    android:id="@+id/btn_calcrda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen16"
+                    android:layout_marginLeft="@dimen/dimen8"
+                    android:layout_marginRight="@dimen/dimen8"
+                    android:layout_marginTop="@dimen/dimen24"
+                    android:background="@color/colorPrimary"
+                    android:text="Calculate RDA"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/body" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_bmr"
+            android:visibility="gone"
+            style="@style/DCardView"
+            app:contentPaddingTop="@dimen/dimen16"
+            app:contentPaddingBottom="@dimen/dimen16"
+            android:layout_below="@+id/cv_info"
+            android:layout_marginTop="@dimen/dimen16">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tv_bmr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingLeft="@dimen/dimen8"
+                    android:text=""
+                    android:textSize="@dimen/subHeading" />
+
+                <TextView
+                    android:id="@+id/tv_tcr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingLeft="@dimen/dimen8"
+                    android:textSize="@dimen/subHeading" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_nutrients"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv_bmr" />
+    </RelativeLayout>
+</ScrollView>
